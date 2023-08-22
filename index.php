@@ -5,39 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lux Resorts</title>
+    <title>Lux Resort - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+
     <?php require('pages/links.php'); ?>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
-        * {
-            font-family: 'Raleway', sans-serif;
-        }
-
-        .h-font {
-            font-family: 'Charm', cursive;
-        }
-
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-
-        .custom-bg {
-            background-color: rgb(151, 119, 183);
-        }
-
-        .custom-bg:hover {
-            background-color: rgb(72, 72, 105);
-        }
-
         .availability-form {
             margin-top: -50px;
             z-index: 2;
@@ -50,12 +23,15 @@
                 padding: 0 35px;
             }
         }
+        
+  <?php include "css/stylesheet.css" ?>
+
     </style>
 </head>
 
 <body class="bg-light">
 
-<?php require('pages/header.php'); ?>
+    <?php require('pages/header.php'); ?>
     <!--Login Modal -->
     <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -550,11 +526,11 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        </div>
-            <div class="col-lg-12 text-center mt-5">
-                <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Testimonials >>></a>
+    </div>
+    <div class="col-lg-12 text-center mt-5">
+        <a href="#" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Testimonials >>></a>
 
-            </div>
+    </div>
 
     </div>
 
@@ -592,9 +568,9 @@
                 </div>
             </div>
         </div>
-    <?php require('pages/footer.php'); ?>
+        <?php require('pages/footer.php'); ?>
 
-        
+
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
