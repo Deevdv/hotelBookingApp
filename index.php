@@ -11,19 +11,7 @@
 
     <?php require('pages/links.php'); ?>
     <style>
-        .availability-form {
-            margin-top: -50px;
-            z-index: 2;
-            position: relative;
-        }
 
-        @media screen and (max-width: 575px) {
-            .availability-form {
-                margin-top: 25px;
-                padding: 0 35px;
-            }
-        }
-        
   <?php include "css/stylesheet.css" ?>
 
     </style>
@@ -32,105 +20,9 @@
 <body class="bg-light">
 
     <?php require('pages/header.php'); ?>
-    <!--Login Modal -->
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person fs-3 me-2"></i>User Login
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input type="email" class="form-control shadow-none">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control shadow-none">
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <button type="submit" class="btn btn-dark shadow-none">Login</button>
-                            <a href="javascript: void(0)" class="text-secondary text-decoration-none">Forgot
-                                Password?</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--Register Modal-->
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title d-flex align-items-center">
-                            <i class="bi bi-person-lines-fill fs-3 me-2"></i>User Registration
-                        </h5>
-                        <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <span class="badge rounded-pill text-bg-light text-dark mb-3 text-wrap lh-base">Please Note:
-                                Your details must be accurate and match with your ID (Driver's License) as this will be
-                                needed during your check-in process. </span>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Name:</label>
-                                        <input type="text" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Email Address:</label>
-                                        <input type="email" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Confirm Email Address:</label>
-                                        <input type="email" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Contact Number:</label>
-                                        <input type="number" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Date of Birth:</label>
-                                        <input type="date" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">ID Number:</label>
-                                        <input type="number" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-12 ps-0 md-3">
-                                        <label class="form-label">Address:</label>
-                                        <textarea class="form-control shadow-none" rows="1"></textarea>
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Password:</label>
-                                        <input type="password" class="form-control shadow-none">
-                                    </div>
-                                    <div class="col-md-6 ps-0 md-3">
-                                        <label class="form-label">Confirm Password:</label>
-                                        <input type="password" class="form-control shadow-none">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center my-1">
-                        <button type="submit" class="btn btn-dark shadow-none">Register</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Swiper -->
+
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
@@ -207,21 +99,18 @@
                     <div class="card-body">
                         <h5>Onomo Hotel</h5>
                         <h6 class="mb-4">R3500.00 per night</h6>
-                        <p class="card-text">Onomo Hotel Durban is located 1312 feet from the beachfront, walking
+                        <p class="card-text">Onomo Hotel Durban is located about 400 meters from the beachfront, walking
                             distance to the Durban ICC and Marine Parade.</p>
                         <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
+                            <h6 class="mb-1">Ammenities</h6>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                The daily breakfast offers continental, buffet or Full English/Irish options. </span>
+                            In-room coffee and tea makers </span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                The modern rooms at Onomo Hotel are equipped with air conditioning, shower and a
-                                flat-screen satellite TV</span>
+                            Concierge service</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                Nearby points of interest include the Kingsmead Cricket Stadium, North Beach and uShaka
-                                Marine World.</span>
+                            Room service.</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                The nearest airport is King Shaka International Airport, 30 minutes' drive from Onomo
-                                Hotel Durban.</span>
+                            Complimentary breakfast</span>
                         </div>
                         <div class="facilities mb-4">
                             <h6 class="mb-1">Facilities</h6>
@@ -233,6 +122,13 @@
                                 Bar</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
                                 Airport Shuttle</span>
+                        </div>
+                        <div class="guests mb-4">
+                        <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                               3+ Adults</span>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                             3+ Children </span>
                         </div>
                         <div class="rating mt-2 mb-4">
                             <h6 class="mb-1">Rating</h6>
@@ -259,16 +155,15 @@
                         <h6 class="mb-4">R5000.00 per night</h6>
                         <p class="card-text">Located just 656 feet from the beach, along Durban’s Golden Mile, Southern Sun Elangeni & Maharani overlooks the Indian Ocean.</p>
                         <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
+                        <h6 class="mb-1">Ammenities</h6>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                Certain modern, air-conditioned rooms offer ocean views. </span>
+                            In-room coffee and tea makers </span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                This family-friendly hotel provides a full English breakfast buffet daily</span>
+                            Concierge service</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                Nearby points of interest include the Kingsmead Cricket Stadium, North Beach and uShaka
-                                Marine World.</span>
+                            Room service.</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                The hotel also offers 3 swimming pools and 4 restaurants serving a variety of dishes.</span>
+                            Complimentary breakfast</span>
                         </div>
                         <div class="facilities mb-4">
                             <h6 class="mb-1">Facilities</h6>
@@ -278,6 +173,13 @@
                                 3 swimming pools</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
                                 Beachfront</span>
+                        </div>
+                        <div class="guests mb-4">
+                        <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                               2+ Adults</span>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                             2+ Children </span>
                         </div>
                         <div class="rating mt-2 mb-4">
                             <h6 class="mb-1">Rating</h6>
@@ -304,15 +206,15 @@
                         <h6 class="mb-4">R1800.00 per night</h6>
                         <p class="card-text">Located in the suburb of Morningside on Florida Road’s famous restaurant strip and only 5 minutes' driving from the Durban Beaches.</p>
                         <div class="features mb-4">
-                            <h6 class="mb-1">Features</h6>
+                        <h6 class="mb-1">Ammenities</h6>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                Charming rooms equipped with satellite TV with various DSTV channels available. </span>
+                            In-room coffee and tea makers </span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                Every air conditioned room is decorated with modern touches and features a queen size bed.</span>
+                            Concierge service</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                A selection of luxury amenities awaits the guests in a marble bathroom.</span>
+                            Room service</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
-                                King Shaka International Airport is a 30-minute drive away and local beaches being a 15 minute drive away.</span>
+                            Complimentary breakfast</span>
                         </div>
                         <div class="facilities mb-4">
                             <h6 class="mb-1">Facilities</h6>
@@ -322,6 +224,13 @@
                                 24-hour security</span>
                             <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
                                 Garden</span>
+                        </div>
+                        <div class="guests mb-4">
+                        <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                               2+ Adults</span>
+                            <span class="badge rounded-pill text-bg-light text-dark  text-wrap lh-base">
+                             1+ Children </span>
                         </div>
                         <div class="rating mt-2 mb-4">
                             <h6 class="mb-1">Rating</h6>
@@ -538,8 +447,8 @@
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Contact Us</h2>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55431.82338705589!2d31.02352225878345!3d-29.734559020467742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef705936be7aad7%3A0x5695c879d17fa492!2suMhlanga!5e0!3m2!1sen!2sza!4v1692648919238!5m2!1sen!2sza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">                
+<iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55431.82338705589!2d31.02352225878345!3d-29.734559020467742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef705936be7aad7%3A0x5695c879d17fa492!2suMhlanga!5e0!3m2!1sen!2sza!4v1692648919238!5m2!1sen!2sza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 rounded mb-6">
