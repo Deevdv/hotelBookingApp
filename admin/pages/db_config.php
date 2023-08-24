@@ -1,8 +1,8 @@
 <?php
 
 $hname = 'localhost';
-$uname = 'dane';
-$pass = '12345';
+$uname = 'nic';
+$pass = '123456789';
 $db = 'hotelbookingapp';
 
 $con = mysqli_connect($hname,$uname,$pass,$db);
@@ -45,24 +45,24 @@ else{
 function update($sql,$values,$datatypes)
 {
     $con = $GLOBALS['con'];
-    var_dump($con);
-    $stmt = mysqli_prepare($con,$sql);
-    if($stmt)
-{
-    mysqli_stmt_bind_param($stmt,$datatypes,...$values);
-    if(mysqli_stmt_execute($stmt)){
-    $res = mysqli_stmt_affected_rows($stmt);
-    mysqli_stmt_close($stmt);
-    return $res;
-}
-else{
-    mysqli_stmt_close($stmt);
-    die("Query cannot be executed - Update");
-    }
-}
-else{
-        die("Query cannot be prepared - Update");
-    }
+   // var_dump($con);
+   $stmt = mysqli_prepare($con, $sql);
+
+   if ($stmt) {
+       mysqli_stmt_bind_param($stmt, $datatypes, ...$values);
+       if (mysqli_stmt_execute($stmt)) {
+           $res = mysqli_stmt_affected_rows($stmt);
+           mysqli_stmt_close($stmt);
+           return $res;
+       } else {
+           $error = mysqli_error($con);
+           mysqli_stmt_close($stmt);
+           die("Query execution failed - Update: $error");
+       }
+   } else {
+       $error = mysqli_error($con);
+       die("Query preparation failed - Update: $error");
+   }
 }
 
 ?>
