@@ -30,8 +30,11 @@
                     <h5>Address</h5>
                     <a href="https://goo.gl/maps/VTPPxq4dEBDhLGQ7A" class="d-inline-block mb-2"><i class="bi bi-geo-alt-fill"></i>124 Umhlanga Rocks Drive, Durban, KZN</a>
                     <h5 class="mt-4">Contact us:</h5>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none d-flex text-dark">
                         <i class="bi bi-telephone-fill"></i> +27315436786
+                    </a>
+                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +2778945874
                     </a>
                     <br>
                     <a href="mailto:  bookings@luxresorts.co.za" class="d-inline-block text-decoration-none text-dark">

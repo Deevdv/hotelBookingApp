@@ -453,8 +453,11 @@
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 rounded mb-6">
                     <h5>Contact us:</h5>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <a href="tel: +27315436786" class="d-inline-block mb-2 d-flex text-decoration-none text-dark">
                         <i class="bi bi-telephone-fill"></i> +27315436786
+                    </a>
+                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +2778945874
                     </a>
                     <br>
                     <a href="#" class="d-inline-block text-decoration-none text-dark">
