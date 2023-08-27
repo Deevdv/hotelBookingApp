@@ -2,13 +2,15 @@
 
 //Frontend data
 
-define('SITE_URL','');
+define('SITE_URL','http://localhost/hotelBookingApp/');
 define('ABOUT_IMG_PATH', SITE_URL. 'images/about/');
+define('CAROUSEL_IMG_PATH', SITE_URL. 'images/carousel/');
 
 //Backend data
 
 define('UPLOAD_IMAGE_PATH',$_SERVER['DOCUMENT_ROOT'].'/hotelBookingApp/images/');
 define('ABOUT_FOLDER','about/');
+define('CAROUSEL_FOLDER','carousel/');
 function adminLogin()
 {
     session_start();
@@ -46,7 +48,7 @@ function uploadImage($image,$folder){
     if(!in_array($img_mime,$valid_mime)){
         return 'inv_img';
     }
-    else if(($image['size']/(3000*4500))>2){
+    else if(($image['size']/(3000*4500))>5){
         return 'inv_size';
     }
     else{
@@ -60,6 +62,15 @@ function uploadImage($image,$folder){
         else{
             return 'upd_failed';
         }
+    }
+}
+
+function deleteImage($image, $folder){
+    if(unlink(UPLOAD_IMAGE_PATH.$folder.$image)){
+        return true;
+    }
+    else{
+        return false;
     }
 }
 

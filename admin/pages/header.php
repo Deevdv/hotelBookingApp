@@ -16,10 +16,10 @@
                                 <a class="nav-link text-white" href="dashboard.php">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="hotels.php">Hotels</a>
+                                <a class="nav-link text-white" href="amenities_facilities.php">Amenities & Facilities</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="hotels.php">Users</a>
+                                <a class="nav-link text-white" href="carousel.php">Carousel</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="settings.php">Settings</a>

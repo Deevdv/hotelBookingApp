@@ -26,24 +26,18 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_15372.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_40905.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_55677.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_62045.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_93127.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img class="w-100" src="images/carousel/IMG_99736.png" />
-                </div>
+                <?php 
+                $res = selectAll('carousel');
+                while($row = mysqli_fetch_assoc($res)){
+
+                    $path = CAROUSEL_IMG_PATH;
+                    echo <<<data
+                    <div class="swiper-slide">
+                         <img class="w-100 d-block" src="$path$row[image]" />
+                    </div>
+                    data;
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -90,6 +84,7 @@
     </div>
 
     <!-- Hotels -->
+
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Hotels</h2>
     <div class="container">
         <div class="row">
@@ -444,36 +439,44 @@
     </div>
 
     <!-- Contact -->
+
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">Contact Us</h2>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">                
-<iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55431.82338705589!2d31.02352225878345!3d-29.734559020467742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef705936be7aad7%3A0x5695c879d17fa492!2suMhlanga!5e0!3m2!1sen!2sza!4v1692648919238!5m2!1sen!2sza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe class="w-100 rounded" height="320px" src="<?php echo $contact_r['iframe']?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 rounded mb-6">
                     <h5>Contact us:</h5>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 d-flex text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +27315436786
+                    <a href="tel: <?php echo  $contact_r['pn1']?>" class="d-inline-block mb-2 d-flex text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> <?php echo $contact_r['pn1']?>
                     </a>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +2778945874
+                    <a href="tel: <?php echo  $contact_r['pn1']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> <?php echo $contact_r['pn2']?>
                     </a>
                     <br>
-                    <a href="#" class="d-inline-block text-decoration-none text-dark">
-                        <i class="bi bi-envelope-fill"></i> bookings@luxresorts.co.za
+                    <a href="<?php echo $contact_r['email']?>" class="d-inline-block text-decoration-none text-dark">
+                        <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email']?>
                     </a>
                     <div class="bg-white p-4 rounded mb-4">
                         <h5>Follow us:</h5>
-                        <a href="#" class="d-inline-block mb-3">
-                            <span class="badge bg-light text-dark fs-6 p-2"> <i class="bi bi-twitter me-1"></i>Twitter</span>
-                        </a>
+                        <?php 
+                        if($contact_r['tw']!=''){
+                            echo<<<data
+                            <a href="$contact_r[tw]" class="d-inline-block mb-3">
+                                <span class="badge bg-light text-dark fs-6 p-2"> <i class="bi bi-twitter me-1"></i>Twitter</span>
+                            </a>
+                            data;
+                        }
+                        ?>
+                        
                         <br>
-                        <a href="#" class="d-inline-block mb-3">
+                        <a href="<?php echo $contact_r['fb']?>" class="d-inline-block mb-3">
                             <span class="badge bg-light text-dark fs-6 p-2"> <i class="bi bi-facebook me-1"></i>Facebook</span>
                         </a>
                         <br>
-                        <a href="#" class="d-inline-block">
+                        <a href="<?php echo $contact_r['insta']?>" class="d-inline-block">
                             <span class="badge bg-light text-dark fs-6 p-2"> <i class="bi bi-instagram me-1"></i>Instagram</span>
                         </a>
                     </div>

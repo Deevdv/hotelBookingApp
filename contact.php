@@ -20,37 +20,45 @@
         <h2 class="fw-bold h-font text-center">Contact us</h2>
         <div class="h-line bg-dark"></div>
     </div>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-mb-6 mb-5 px-4">
 
                 <div class="bg-white rounded shadow p-4">
-                    <iframe class="w-100 rounded mb-4" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55431.82338705589!2d31.02352225878345!3d-29.734559020467742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef705936be7aad7%3A0x5695c879d17fa492!2suMhlanga!5e0!3m2!1sen!2sza!4v1692648919238!5m2!1sen!2sza" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="w-100 rounded mb-4" height="320px" src="<?php echo $contact_r['iframe']?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     <h5>Address</h5>
-                    <a href="https://goo.gl/maps/VTPPxq4dEBDhLGQ7A" class="d-inline-block mb-2"><i class="bi bi-geo-alt-fill"></i>124 Umhlanga Rocks Drive, Durban, KZN</a>
+                    <a href="<?php echo $contact_r['gmap']?>" class="d-inline-block mb-2"><i class="bi bi-geo-alt-fill"></i><?php echo $contact_r['address']?></a>
                     <h5 class="mt-4">Contact us:</h5>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none d-flex text-dark">
-                        <i class="bi bi-telephone-fill"></i> +27315436786
+                    <a href="tel: +<?php echo $contact_r['pn1']?>" class="d-inline-block mb-2 text-decoration-none d-flex text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1']?>
                     </a>
-                    <a href="tel: +27315436786" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +2778945874
+                    <a href="tel: +<?php echo $contact_r['pn2']?>" class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn2']?>
                     </a>
                     <br>
-                    <a href="mailto:  bookings@luxresorts.co.za" class="d-inline-block text-decoration-none text-dark">
-                        <i class="bi bi-envelope-fill"></i> bookings@luxresorts.co.za
+                    <a href="mailto:  <?php echo $contact_r['email']?>" class="d-inline-block text-decoration-none text-dark">
+                        <i class="bi bi-envelope-fill"></i> <?php echo $contact_r['email']?>
                     </a>
 
                     <h5 class="mt-4">Follow us:</h5>
-                    <a href="#" class="d-inline-block text-dark fs=5 me-2">
-                        <i class="bi bi-twitter me-1"></i>
-                    </a>
+                    <?php
+                    if($contact_r['tw']!=''){
+                        echo<<<data
+                            <a href="$contact_r[tw]" class="d-inline-block text-dark fs=5 me-2">
+                                <i class="bi bi-twitter me-1"></i>
+                            </a>
 
-                    <a href="#" class="d-inline-block text-dark fs=5 me-2">
+                        data;
+                    }
+                    ?>
+                   
+                    <a href="<?php echo $contact_r['fb']?>" class="d-inline-block text-dark fs=5 me-2">
                         <i class="bi bi-facebook me-1"></i>
                     </a>
 
-                    <a href="#" class="d-inline-block text-dark fs=5">
+                    <a href="<?php echo $contact_r['insta']?>" class="d-inline-block text-dark fs=5">
                         <i class="bi bi-instagram me-1"></i>
                     </a>
                 </div>
@@ -58,31 +66,45 @@
 
             <div class="col-lg-6 col-mb-6 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <form>
+                    <form method="POST">
                         <h5>Send us a message</h5>
                         <div class="mt-3">
                             <label class="form-label">Name:</label>
-                            <input type="text" class="form-control shadow-none">
+                            <input name="name" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label">Email:</label>
-                            <input type="email" class="form-control shadow-none">
+                            <input name="email" required type="email" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label">Subject:</label>
-                            <input type="text" class="form-control shadow-none">
+                            <input name="subject" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mt-3">
                             <label class="form-label">Message:</label>
-                            <textarea class="form-control shadow none" rows="5"></textarea>
+                            <textarea name="message" required class="form-control shadow none" rows="5"></textarea>
                         </div>
-                        <button type="submit" class="btn text-white custom-bg mt-3 k shadow-none">Send</button>
+                        <button type="submit" name="submit" class="btn text-white custom-bg mt-3 k shadow-none">Send</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <?php 
+
+if(isset($_POST['send'])){
+
+    $frm_data = filteration($_POST);
+
+    $q = "INSERT INTO `user_queries`(`name`, `email`, `subject`, `message`) VALUES (?,?,?,?)";
+    $values = [$frm_data['name'],$frm_data['email'],$frm_data['subject'],$frm_data['message']];
+
+    $res = insert($q,$values,'ssss');
+    echo $res;
+    }
+    ?>
 
 
     <?php require('pages/footer.php'); ?>

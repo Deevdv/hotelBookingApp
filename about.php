@@ -77,35 +77,19 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/mbali.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Mbali Nyuswa</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/ayanda.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Ayanda Dlamini</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/alex.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Alex Jones</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/kiara.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Kiara Naidoo</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/nomsa.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Nomsa Sithole</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/josiah.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Josiah Peters</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/robert.jpg" class="w-100" alt="image of woman">
-                    <h5 class="mt-2">Robert Cho</h5>
-                </div>
 
+            <?php
+            $about_r = selectAll('team_details');
+            $path = ABOUT_IMG_PATH;
+            while($row = mysqli_fetch_assoc($about_r)){
+                echo<<<data
+                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
+                    <img src="$path$row[picture]" class="w-100" alt="image of woman">
+                    <h5 class="mt-2">$row[name]</h5>
+                </div>
+                data;
+            }
+            ?>
             </div>
             <div class="swiper-pagination"></div>
         </div>
